@@ -9,3 +9,5 @@ class RentFlowApplication
 fun main(args: Array<String>) {
     runApplication<RentFlowApplication>(*args)
 }
+
+

@@ -30,7 +30,7 @@ open class PropertyUnit(
     var ebNumber : String,
 
     @OneToMany(mappedBy = "propertyUnit", fetch = FetchType.LAZY)
-    var tenants: MutableList<Tenant> = mutableListOf()
+    var tenants:  MutableSet<Tenant> = mutableSetOf()
 
 ): BaseEntity(){
     val isOccupied: Boolean

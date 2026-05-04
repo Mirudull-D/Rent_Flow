@@ -26,5 +26,4 @@ data class BuildingDetailResponse(
 
     val activeTemplates: List<ChargeTemplateResponse>,
 
-    val currentMonthChargesSummary: ChargeSummaryResponse
 )

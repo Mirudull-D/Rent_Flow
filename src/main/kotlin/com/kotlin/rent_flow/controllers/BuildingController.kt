@@ -37,17 +37,17 @@ class BuildingController(
     fun getById(@PathVariable id: UUID): BuildingDetailResponse {
         return buildingService.getById(id)
     }
-//
-//    @PutMapping("/{id}")
-//    fun update(
-//        @PathVariable id: UUID,
-//        @RequestBody request: UpdateBuildingRequest
-//    ): BuildingResponse {
-//        return buildingService.update(id, request)
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    fun delete(@PathVariable id: UUID) {
-//        buildingService.delete(id)
-//    }
+
+    @PutMapping("/{id}")
+    fun update(
+        @PathVariable id: UUID,
+        @RequestBody request: UpdateBuildingRequest
+    ): BuildingResponse {
+        return buildingService.update(id, request)
+    }
+
+    @DeleteMapping("/{id}")
+    fun delete(@PathVariable id: UUID) {
+        buildingService.delete(id)
+    }
 }

@@ -1,6 +1,7 @@
 package com.kotlin.rent_flow.services.impl
 
 import com.kotlin.rent_flow.dtos.request.CreateBuildingRequest
+import com.kotlin.rent_flow.dtos.request.UpdateBuildingRequest
 import com.kotlin.rent_flow.dtos.response.BuildingDetailResponse
 import com.kotlin.rent_flow.dtos.response.BuildingResponse
 import com.kotlin.rent_flow.dtos.response.ChargeTemplateResponse
@@ -17,11 +18,13 @@ import org.springframework.stereotype.Service
 import java.math.BigDecimal
 import java.util.UUID
 import com.kotlin.rent_flow.mappers.Mappers.mapToResponse
+import com.kotlin.rent_flow.repositories.TenantRepository
 
 @Service
 class BuildingServicesImpl(
     private val buildingRepository: BuildingRepository,
     private val chargeTemplateRepository: ChargeTemplateRepository,
+    private val tenantRepository: TenantRepository,
 ) : BuildingServices {
     override fun create(request: CreateBuildingRequest): BuildingResponse {
         if (request.waterTaxAmount < BigDecimal.ZERO ||
@@ -101,7 +104,40 @@ class BuildingServicesImpl(
         )
     }
 
+    override fun update(id: UUID, request: UpdateBuildingRequest): BuildingResponse {
 
+        val building = buildingRepository.findById(id)
+            .orElseThrow{ throw IllegalArgumentException("No building with id $id") }
+
+        request.name?.let {
+            if (it.isBlank()) throw IllegalArgumentException("Name cannot be blank")
+            building.name = it
+        }
+        request.address?.let {
+            if (it.isBlank()) throw IllegalArgumentException("Name cannot be blank")
+            building.address = it
+        }
+        request.waterTaxAmount?.let {
+            if (it < BigDecimal.ZERO) throw IllegalArgumentException("WaterTaxAmount cannot be Negative")
+            building.waterTaxAmount = it
+        }
+        request.propertyTaxAmount?.let {
+            if (it < BigDecimal.ZERO) throw IllegalArgumentException("PropertyTaxAmount cannot be Negative")
+            building.propertyTaxAmount = it
+        }
+
+        val saved = buildingRepository.save(building)
+
+        return mapToResponse(saved)
+
+    }
+    @Transactional
+    override fun delete(id: UUID) {
+        if(tenantRepository.existsByPropertyUnit_Building_IdAndIsActiveTrue(id)){
+            throw IllegalArgumentException("Tenant exists Coudnt Delete the Building with id $id")
+        }
+        buildingRepository.deleteById(id)
+    }
 
 
 }

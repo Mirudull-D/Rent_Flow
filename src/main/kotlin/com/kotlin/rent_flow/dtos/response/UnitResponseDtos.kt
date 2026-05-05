@@ -15,3 +15,9 @@ data class UnitWithTenantResponse(
     val isOccupied: Boolean,
     val tenant: TenantResponse?
 )
+data class UnitWithTenantResponses(
+    val id: UUID,
+    val unitNumber: String,
+    val isOccupied: Boolean,
+    val tenant: List<TenantResponse>?
+)

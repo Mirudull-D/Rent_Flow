@@ -7,3 +7,8 @@ data class CreateUnitRequest(
     val unitNumber: String,
     val ebNumber: String
 )
+
+data class UpdateUnitRequest(
+    val unitNumber: String?,
+    val ebNumber: String?
+)

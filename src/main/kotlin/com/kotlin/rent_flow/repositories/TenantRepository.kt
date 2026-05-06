@@ -8,4 +8,5 @@ import java.util.UUID
 @Repository
 interface TenantRepository : JpaRepository<Tenant, UUID> {
     fun existsByPropertyUnit_Building_IdAndIsActiveTrue(BuildingId: UUID): Boolean
+    fun existsByPropertyUnit_IdAndIsActiveTrue(propertyUnitId: UUID): Boolean
 }

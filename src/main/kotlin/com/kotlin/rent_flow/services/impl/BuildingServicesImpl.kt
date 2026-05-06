@@ -69,6 +69,7 @@ class BuildingServicesImpl(
                 id = unit.id!!,
                 unitNumber = unit.unitNumber,
                 isOccupied = unit.isOccupied,
+                isActive = unit.isActive,
                 tenant = activeTenant?.let {
                     TenantResponse(
                     id = it.id!!,

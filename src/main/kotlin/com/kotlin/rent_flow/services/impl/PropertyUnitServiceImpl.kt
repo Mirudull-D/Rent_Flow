@@ -1,6 +1,7 @@
 package com.kotlin.rent_flow.services.impl
 
 import com.kotlin.rent_flow.dtos.request.CreateUnitRequest
+import com.kotlin.rent_flow.dtos.request.UpdateUnitRequest
 import com.kotlin.rent_flow.dtos.response.PropertyUnitResponse
 import com.kotlin.rent_flow.dtos.response.TenantResponse
 import com.kotlin.rent_flow.dtos.response.UnitWithTenantResponse
@@ -12,12 +13,16 @@ import com.kotlin.rent_flow.services.PropertyUnitService
 import jakarta.transaction.Transactional
 import org.springframework.stereotype.Service
 import com.kotlin.rent_flow.mappers.Mappers.toUnitResponse
+import com.kotlin.rent_flow.mappers.Mappers.toUnitTenantResponses
+import com.kotlin.rent_flow.mappers.Mappers.toUnitTenantResponse
+import com.kotlin.rent_flow.repositories.TenantRepository
 import java.util.UUID
 
 @Service
 class PropertyUnitServiceImpl(
     private val buildingRepository: BuildingRepository,
-    private val propertyUnitRepository: PropertyUnitRepository
+    private val propertyUnitRepository: PropertyUnitRepository,
+    private val tenantRepository: TenantRepository
 ): PropertyUnitService {
 
     @Transactional
@@ -64,6 +69,7 @@ class PropertyUnitServiceImpl(
             id = unit.id!!,
             unitNumber = unit.unitNumber,
             isOccupied = unit.isOccupied,
+            isActive = unit.isActive,
             tenant = tenants.map {
                 TenantResponse(
                 id = it.id!!,
@@ -75,4 +81,42 @@ class PropertyUnitServiceImpl(
             ) }
         )
     }
+
+    @Transactional
+    override fun update( unitId:UUID , unitRequest: UpdateUnitRequest): UnitWithTenantResponse {
+
+        val unit = propertyUnitRepository.findByIdWithTenants(unitId)
+            ?: throw IllegalArgumentException("Unit dose not exist")
+
+        unitRequest.unitNumber?.let {
+            if (unitRequest.unitNumber.isBlank()) {
+                throw IllegalArgumentException("Unit Number can't be empty")
+            }
+            unit.unitNumber=unitRequest.unitNumber
+        }
+        unitRequest.ebNumber?.let {
+            if (unitRequest.ebNumber.isBlank()) {
+                throw IllegalArgumentException("Eb Number can't be empty")
+            }
+            unit.ebNumber=unitRequest.ebNumber
+        }
+        val saved = propertyUnitRepository.save(unit)
+
+        return toUnitTenantResponse(unit)
+
+    }
+
+    @Transactional
+    override fun delete(id: UUID) {
+        if (!tenantRepository.existsByPropertyUnit_IdAndIsActiveTrue(id)){
+            throw IllegalArgumentException("Property has Active Members")
+        }
+        val unit = propertyUnitRepository.findById(id)
+            .orElseThrow{throw IllegalArgumentException("Unit dose not exist")}
+        unit.isActive = false
+        propertyUnitRepository.save(unit)
+        return
+    }
+
+
 }

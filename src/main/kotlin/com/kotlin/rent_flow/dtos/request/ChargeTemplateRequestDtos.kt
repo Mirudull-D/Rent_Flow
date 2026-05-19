@@ -22,5 +22,27 @@ data class CreateChargeTemplateRequest(
     val dueDay: Int?,
 
     val startDate: Instant,
-    val endDate: Instant?
+    val endDate: Instant?,
+    val autoGenerate: Boolean = true,
+)
+
+data class UpdateChargeTemplateRequest(
+
+    val label: String?,
+
+    val defaultAmount: BigDecimal?,
+
+    val amountIsFixed: Boolean?,
+
+    val frequency: FrequencyType?,
+
+    val dueDay: Int?,
+
+    val autoGenerate: Boolean?,
+
+    val startDate: Instant?,
+
+    val endDate: Instant?,
+
+    val isActive: Boolean?
 )

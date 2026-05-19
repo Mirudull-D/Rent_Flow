@@ -89,16 +89,15 @@ class PropertyUnitServiceImpl(
             ?: throw IllegalArgumentException("Unit dose not exist")
 
         unitRequest.unitNumber?.let {
-            if (unitRequest.unitNumber.isBlank()) {
-                throw IllegalArgumentException("Unit Number can't be empty")
+            if (!unitRequest.unitNumber.isBlank()) {
+                unit.unitNumber=unitRequest.unitNumber
             }
-            unit.unitNumber=unitRequest.unitNumber
+
         }
         unitRequest.ebNumber?.let {
             if (unitRequest.ebNumber.isBlank()) {
-                throw IllegalArgumentException("Eb Number can't be empty")
-            }
             unit.ebNumber=unitRequest.ebNumber
+            }
         }
         val saved = propertyUnitRepository.save(unit)
 

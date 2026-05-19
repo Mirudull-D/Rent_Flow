@@ -1,8 +1,10 @@
 package com.kotlin.rent_flow.mappers
 
+import com.kotlin.rent_flow.dtos.request.CreateTenantRequest
 import com.kotlin.rent_flow.dtos.response.TenantChargeResponse
 import com.kotlin.rent_flow.dtos.response.TenantResponse
 import com.kotlin.rent_flow.entiites.Charge
+import com.kotlin.rent_flow.entiites.PropertyUnit
 import com.kotlin.rent_flow.entiites.Tenant
 
 object TenantMappers {
@@ -32,5 +34,14 @@ object TenantMappers {
             )
         }
 
+    }
+    fun toTenantEntity(tenant: CreateTenantRequest , unit: PropertyUnit): Tenant {
+        return Tenant(
+            propertyUnit = unit,
+            name = tenant.name,
+            phoneNumber = tenant.phoneNumber,
+            doorDescription = tenant.doorDescription,
+            rent = tenant.rent,
+        )
     }
 }

@@ -16,6 +16,7 @@ import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 import jakarta.persistence.Table
 import jakarta.persistence.UniqueConstraint
+import java.time.LocalDate
 import java.util.UUID
 
 
@@ -76,3 +77,10 @@ open class Charge(
     @Column(columnDefinition = "TEXT")
     var notes: String?
 ): BaseEntity()
+{
+    val isOverdue: Boolean
+        get() =
+            status == ChargeStatus.PENDING &&
+                    dueDate != null &&
+                    dueDate!!.isBefore(LocalDate.now())
+}

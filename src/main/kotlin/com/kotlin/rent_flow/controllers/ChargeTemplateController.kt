@@ -20,13 +20,13 @@ class ChargeTemplateController(
     private val chargeTemplateService: ChargeTemplateService
 ) {
 
-//    @PostMapping
-//    fun create(
-//        @Valid @RequestBody request: CreateChargeTemplateRequest
-//    ): ChargeTemplateResponse {
-//
-//        return chargeTemplateService.create(request)
-//    }
+    @PostMapping
+    fun create(
+        @Valid @RequestBody request: CreateChargeTemplateRequest
+    ): ChargeTemplateResponse {
+
+        return chargeTemplateService.create(request)
+    }
 //
 //    @GetMapping
 //    fun getAll(): List<ChargeTemplateResponse> {

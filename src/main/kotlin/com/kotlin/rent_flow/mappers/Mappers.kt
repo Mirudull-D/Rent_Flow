@@ -32,6 +32,8 @@ object Mappers {
             frequency = template.frequency,
             dueDay = template.dueDay,
             isActive = template.isActive,
+            amountIsFixed = template.amountIsFixed,
+            autoGenerate = template.autoGenerate,
         )
 
 }

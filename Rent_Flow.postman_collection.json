@@ -1,0 +1,1130 @@
+{
+  "info": {
+    "_postman_id": "a30411ef-1b92-4a26-88cc-7e521c4379b2",
+    "name": "Rent_Flow",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "46317139",
+    "_collection_link": "https://go.postman.co/collection/46317139-a30411ef-1b92-4a26-88cc-7e521c4379b2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/buildings",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Sunrise Apartments\",\r\n  \"address\": \"12, MG Road, Chennai\",\r\n  \"waterTaxAmount\": 1500.00,\r\n  \"propertyTaxAmount\": 3000.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/buildings",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "buildings"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/buildings",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Sunrise Apartments\",\r\n  \"address\": \"12, MG Road, Chennai\",\r\n  \"waterTaxAmount\": 1500.00,\r\n  \"propertyTaxAmount\": 3000.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/buildings",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "buildings"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "159"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 04 May 2026 12:35:28 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"c81f4e76-d9ab-4c1c-8bfe-6b625bf03474\",\n    \"name\": \"Sunrise Apartments\",\n    \"address\": \"12, MG Road, Chennai\",\n    \"waterTaxAmount\": 1500,\n    \"propertyTaxAmount\": 3000\n}"
+        }
+      ]
+    },
+    {
+      "name": "/buildings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8080/buildings",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "buildings"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/buildings",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/buildings",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "buildings"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "161"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 04 May 2026 15:29:23 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"c81f4e76-d9ab-4c1c-8bfe-6b625bf03474\",\n        \"name\": \"Sunrise Apartments\",\n        \"address\": \"12, MG Road, Chennai\",\n        \"waterTaxAmount\": 1500,\n        \"propertyTaxAmount\": 3000\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/buildings/{id}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8080/buildings/c81f4e76-d9ab-4c1c-8bfe-6b625bf03474",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "buildings",
+            "c81f4e76-d9ab-4c1c-8bfe-6b625bf03474"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/buildings/{id}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/buildings/c81f4e76-d9ab-4c1c-8bfe-6b625bf03474",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "buildings",
+                "c81f4e76-d9ab-4c1c-8bfe-6b625bf03474"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "240"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 04 May 2026 15:52:14 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"c81f4e76-d9ab-4c1c-8bfe-6b625bf03474\",\n    \"name\": \"Sunrise Apartments\",\n    \"address\": \"12, MG Road, Chennai\",\n    \"waterTaxAmount\": 1500,\n    \"propertyTaxAmount\": 3000,\n    \"totalUnits\": 0,\n    \"occupiedUnits\": 0,\n    \"vacantUnits\": 0,\n    \"units\": [],\n    \"activeTemplates\": []\n}"
+        },
+        {
+          "name": "/buildings/{id}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/buildings/791bcd9e-e5cc-48fc-8daf-29decdf17927",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "buildings",
+                "791bcd9e-e5cc-48fc-8daf-29decdf17927"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "337"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 May 2026 18:05:30 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\n    \"name\": \"Sunrise Apartments\",\n    \"address\": \"12, MG Road, Chennai\",\n    \"waterTaxAmount\": 1500,\n    \"propertyTaxAmount\": 3000,\n    \"totalUnits\": 1,\n    \"occupiedUnits\": 0,\n    \"vacantUnits\": 1,\n    \"units\": [\n        {\n            \"id\": \"ad493a0c-589c-49ab-94b6-2534808b1ebf\",\n            \"unitNumber\": \"12345\",\n            \"tenant\": null,\n            \"occupied\": false\n        }\n    ],\n    \"activeTemplates\": []\n}"
+        }
+      ]
+    },
+    {
+      "name": "/buildings",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"address\": \"12, MG Road, Chennai\",\r\n  \"waterTaxAmount\": 150.00,\r\n  \"propertyTaxAmount\": 3000.00\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/buildings/c81f4e76-d9ab-4c1c-8bfe-6b625bf03474",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "buildings",
+            "c81f4e76-d9ab-4c1c-8bfe-6b625bf03474"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/buildings",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"address\": \"12, MG Road, Chennai\",\r\n  \"waterTaxAmount\": 150.00,\r\n  \"propertyTaxAmount\": 3000.00\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/buildings/c81f4e76-d9ab-4c1c-8bfe-6b625bf03474",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "buildings",
+                "c81f4e76-d9ab-4c1c-8bfe-6b625bf03474"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "158"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 04 May 2026 17:51:21 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"c81f4e76-d9ab-4c1c-8bfe-6b625bf03474\",\n    \"name\": \"Sunrise Apartments\",\n    \"address\": \"12, MG Road, Chennai\",\n    \"waterTaxAmount\": 150,\n    \"propertyTaxAmount\": 3000\n}"
+        }
+      ]
+    },
+    {
+      "name": "/buildings",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/buildings/c81f4e76-d9ab-4c1c-8bfe-6b625bf03474",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "buildings",
+            "c81f4e76-d9ab-4c1c-8bfe-6b625bf03474"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/units",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"buildingId\":\"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n    \"unitNumber\":\"12345\",\r\n    \"ebNumber\":\"0020 202002 002 \"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/units",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "units"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/units",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"buildingId\":\"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n    \"unitNumber\":\"12345\",\r\n    \"ebNumber\":\"0020 202002 002 \"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/units",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "units"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "113"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 May 2026 18:04:06 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"ad493a0c-589c-49ab-94b6-2534808b1ebf\",\n    \"unitNumber\": \"12345\",\n    \"ebNumber\": \"0020 202002 002 \",\n    \"occupied\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "/buildings/{buildingId}/units",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "/buildings/{buildingId}/units",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/buildings/791bcd9e-e5cc-48fc-8daf-29decdf17927/units",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "buildings",
+                "791bcd9e-e5cc-48fc-8daf-29decdf17927",
+                "units"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "115"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 May 2026 18:18:13 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"ad493a0c-589c-49ab-94b6-2534808b1ebf\",\n        \"unitNumber\": \"12345\",\n        \"ebNumber\": \"0020 202002 002 \",\n        \"occupied\": false\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/units/{id}",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "name": "/units/{id}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/units/ad493a0c-589c-49ab-94b6-2534808b1ebf",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "units",
+                "ad493a0c-589c-49ab-94b6-2534808b1ebf"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "95"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 05 May 2026 18:46:40 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"ad493a0c-589c-49ab-94b6-2534808b1ebf\",\n    \"unitNumber\": \"12345\",\n    \"tenant\": [],\n    \"occupied\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "/units/{id}",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"unitNumber\": \"12345\",\r\n    \"ebNumber\": \"00202 \"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/units/ad493a0c-589c-49ab-94b6-2534808b1ebf",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "units",
+            "ad493a0c-589c-49ab-94b6-2534808b1ebf"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/units/{unitId}/tenants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8080/units/c0c0c844-3354-499f-b16b-1d0a4cd0ca3d/tenants",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "units",
+            "c0c0c844-3354-499f-b16b-1d0a4cd0ca3d",
+            "tenants"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/units/{unitId}/tenants",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/units/c0c0c844-3354-499f-b16b-1d0a4cd0ca3d/tenants",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "units",
+                "c0c0c844-3354-499f-b16b-1d0a4cd0ca3d",
+                "tenants"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "166"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 19 May 2026 13:51:20 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"e590f227-3afb-4d80-9dd7-500be3a37ac5\",\n        \"name\": \"Rahul Sharma\",\n        \"phoneNumber\": \"9876543210\",\n        \"doorDescription\": \"2nd Floor Left Side\",\n        \"rent\": 15000,\n        \"active\": true\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/units/{unitId}/tenants",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"phoneNumber\": \"9876543210\",\r\n  \"doorDescription\": \"2nd Floor Left Side\",\r\n  \"rent\": 15000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/units/c0c0c844-3354-499f-b16b-1d0a4cd0ca3d/tenants",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "units",
+            "c0c0c844-3354-499f-b16b-1d0a4cd0ca3d",
+            "tenants"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/units/{unitId}/tenants",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"phoneNumber\": \"9876543210\",\r\n  \"doorDescription\": \"2nd Floor Left Side\",\r\n  \"rent\": 15000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/units/c0c0c844-3354-499f-b16b-1d0a4cd0ca3d/tenants",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "units",
+                "c0c0c844-3354-499f-b16b-1d0a4cd0ca3d",
+                "tenants"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "161"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 19 May 2026 13:50:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e590f227-3afb-4d80-9dd7-500be3a37ac5\",\n    \"name\": \"Rahul Sharma\",\n    \"phoneNumber\": \"9876543210\",\n    \"doorDescription\": \"2nd Floor Left Side\",\n    \"rent\": 15000,\n    \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/tenants/{id}",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"phoneNumber\": \"9876543210\",\r\n  \"doorDescription\": \"2nd Floor Left Side\",\r\n  \"rent\": 15000\r\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "tenants",
+            "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/tenants/{id}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"phoneNumber\": \"9876543210\",\r\n  \"doorDescription\": \"2nd Floor Left Side\",\r\n  \"rent\": 15000\r\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "tenants",
+                "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "474"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 19 May 2026 13:53:58 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e590f227-3afb-4d80-9dd7-500be3a37ac5\",\n    \"name\": \"Rahul Sharma\",\n    \"phoneNumber\": \"9876543210\",\n    \"doorDescription\": \"2nd Floor Left Side\",\n    \"rent\": 15000,\n    \"building\": {\n        \"id\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\n        \"name\": \"Sunrise Apartments\",\n        \"address\": \"12, MG Road, Chennai\"\n    },\n    \"unit\": {\n        \"id\": \"c0c0c844-3354-499f-b16b-1d0a4cd0ca3d\",\n        \"unitNumber\": \"12345\",\n        \"ebNumber\": \"0020 202002 002 \"\n    },\n    \"financialSummary\": {\n        \"pendingAmount\": 0,\n        \"overdueAmount\": 0,\n        \"paidThisMonth\": 0\n    },\n    \"charges\": [],\n    \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/tenants/{id}",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Rahul Sharma Updated\",\r\n  \"phoneNumber\": \"9998887776\",\r\n  \"doorDescription\": \"3rd Floor Right Side\",\r\n  \"rent\": 17000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "tenants",
+            "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/tenants/{id}",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Rahul Sharma Updated\",\r\n  \"phoneNumber\": \"9998887776\",\r\n  \"doorDescription\": \"3rd Floor Right Side\",\r\n  \"rent\": 17000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "tenants",
+                "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "173"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 19 May 2026 15:45:33 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e590f227-3afb-4d80-9dd7-500be3a37ac5\",\n    \"name\": \"Rahul Sharma Updated\",\n    \"phoneNumber\": \"9998887776\",\n    \"doorDescription\": \"3rd Floor Right Side\",\n    \"rent\": 15000,\n    \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/tenants/{id}",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Rahul Sharma Updated\",\r\n  \"phoneNumber\": \"9998887776\",\r\n  \"doorDescription\": \"3rd Floor Right Side\",\r\n  \"rent\": 17000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "tenants",
+            "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/tenants/{id}",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Rahul Sharma Updated\",\r\n  \"phoneNumber\": \"9998887776\",\r\n  \"doorDescription\": \"3rd Floor Right Side\",\r\n  \"rent\": 17000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "tenants",
+                "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "173"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 19 May 2026 15:45:33 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"e590f227-3afb-4d80-9dd7-500be3a37ac5\",\n    \"name\": \"Rahul Sharma Updated\",\n    \"phoneNumber\": \"9998887776\",\n    \"doorDescription\": \"3rd Floor Right Side\",\n    \"rent\": 15000,\n    \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/charge-templates",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scope\": \"BUILDING\",\r\n  \"buildingId\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n  \"chargeType\": \"WATER_TAX\",\r\n  \"label\": \"Monthly Water Charge\",\r\n  \"defaultAmount\": 2500,\r\n  \"amountIsFixed\": true,\r\n  \"frequency\": \"MONTHLY\",\r\n  \"dueDay\": 5,\r\n  \"autoGenerate\": true,\r\n  \"startDate\": \"2026-05-01T00:00:00Z\",\r\n  \"endDate\": null,\r\n  \"isActive\": true\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/charge-templates",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/charge-templates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge-templates",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

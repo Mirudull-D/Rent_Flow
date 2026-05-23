@@ -27,13 +27,13 @@ class ChargeTemplateController(
 
         return chargeTemplateService.create(request)
     }
-//
-//    @GetMapping
-//    fun getAll(): List<ChargeTemplateResponse> {
-//
-//        return chargeTemplateService.getAll()
-//    }
-//
+
+    @GetMapping
+    fun getAll(): List<ChargeTemplateResponse> {
+
+        return chargeTemplateService.getAll()
+    }
+
 //    @GetMapping("/{id}")
 //    fun getById(
 //        @PathVariable id: UUID

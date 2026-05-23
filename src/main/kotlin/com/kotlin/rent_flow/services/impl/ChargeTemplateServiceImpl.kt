@@ -73,4 +73,9 @@ class ChargeTemplateServiceImpl(
 
         return mapToChargeTemplateResponse(chargeTemplate)
     }
+
+    override fun getAll(): List<ChargeTemplateResponse> {
+        val charges = chargeTemplateRepository.findAll()
+        return charges.map { mapToChargeTemplateResponse(it) }
+    }
 }

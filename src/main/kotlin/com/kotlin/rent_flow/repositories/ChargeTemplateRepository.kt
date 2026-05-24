@@ -9,4 +9,6 @@ import java.util.UUID
 @Repository
 interface ChargeTemplateRepository: JpaRepository<ChargeTemplate, UUID> {
     fun findAllByBuilding_IdAndIsActiveTrue(buildingId: UUID): List<ChargeTemplate>
+    fun findAllByBuildingId(buildingId: UUID): List<ChargeTemplate>
+    fun findAllByTenantId(tenantId: UUID): List<ChargeTemplate>
 }

@@ -1,6 +1,8 @@
 package com.kotlin.rent_flow.services.impl
 
 import com.kotlin.rent_flow.dtos.request.CreateChargeTemplateRequest
+import com.kotlin.rent_flow.dtos.request.UpdateChargeTemplateRequest
+import com.kotlin.rent_flow.dtos.response.ChargeTemplateDetailResponse
 import com.kotlin.rent_flow.dtos.response.ChargeTemplateResponse
 import com.kotlin.rent_flow.entiites.Building
 import com.kotlin.rent_flow.entiites.ChargeTemplate
@@ -11,7 +13,9 @@ import com.kotlin.rent_flow.repositories.ChargeTemplateRepository
 import com.kotlin.rent_flow.repositories.TenantRepository
 import com.kotlin.rent_flow.services.ChargeTemplateService
 import com.kotlin.rent_flow.mappers.Mappers.mapToChargeTemplateResponse
+import com.kotlin.rent_flow.mappers.ChargeTemplateMappers.mapToDetailChargeTemplate
 import org.springframework.stereotype.Service
+import java.util.UUID
 
 @Service
 class ChargeTemplateServiceImpl(
@@ -77,5 +81,58 @@ class ChargeTemplateServiceImpl(
     override fun getAll(): List<ChargeTemplateResponse> {
         val charges = chargeTemplateRepository.findAll()
         return charges.map { mapToChargeTemplateResponse(it) }
+    }
+
+    override fun getById(id: UUID): ChargeTemplateDetailResponse {
+        val template = chargeTemplateRepository.findById(id)
+                .orElseThrow { IllegalArgumentException("chargeTemplate not found") }
+        return mapToDetailChargeTemplate(template)
+    }
+
+    override fun getByBuilding(buildingId: UUID): List<ChargeTemplateResponse> {
+        val template = chargeTemplateRepository.findAllByBuildingId(buildingId)
+
+        return template.map { template -> mapToChargeTemplateResponse(template) }
+    }
+
+    override fun getByTenant(tenantId: UUID): List<ChargeTemplateResponse> {
+        val template = chargeTemplateRepository.findAllByTenantId(tenantId)
+
+        return template.map { template -> mapToChargeTemplateResponse(template) }
+
+    }
+
+    override fun update(
+        id: UUID,
+        request: UpdateChargeTemplateRequest
+    ): ChargeTemplateDetailResponse {
+        val template = chargeTemplateRepository.findById(id)
+            .orElseThrow { IllegalArgumentException("chargeTemplate not found") }
+
+        request.amountIsFixed?.let { template.amountIsFixed = it }
+        request.frequency?.let { template.frequency = it }
+        request.dueDay?.let { template.dueDay = it }
+        request.startDate?.let { template.startDate = it }
+        request.endDate?.let { template.endDate = it }
+        request.autoGenerate?.let { template.autoGenerate = it }
+        request.defaultAmount?.let { template.defaultAmount = it }
+        request.label?.let { template.label = it }
+
+        chargeTemplateRepository.save(template)
+        return mapToDetailChargeTemplate(template)
+
+    }
+
+    override fun deactivate(id: UUID) {
+        val template = chargeTemplateRepository.findById(id)
+            .orElseThrow { IllegalArgumentException("chargeTemplate not found") }
+        template.isActive = false
+        chargeTemplateRepository.save(template)
+    }
+    override fun activate(id: UUID) {
+        val template = chargeTemplateRepository.findById(id)
+            .orElseThrow { IllegalArgumentException("chargeTemplate not found") }
+        template.isActive = true
+        chargeTemplateRepository.save(template)
     }
 }

@@ -1,6 +1,8 @@
 package com.kotlin.rent_flow.controllers
 
 import com.kotlin.rent_flow.dtos.request.CreateChargeTemplateRequest
+import com.kotlin.rent_flow.dtos.request.UpdateChargeTemplateRequest
+import com.kotlin.rent_flow.dtos.response.ChargeTemplateDetailResponse
 import com.kotlin.rent_flow.dtos.response.ChargeTemplateResponse
 import com.kotlin.rent_flow.services.ChargeTemplateService
 import jakarta.validation.Valid
@@ -34,52 +36,52 @@ class ChargeTemplateController(
         return chargeTemplateService.getAll()
     }
 
-//    @GetMapping("/{id}")
-//    fun getById(
-//        @PathVariable id: UUID
-//    ): ChargeTemplateDetailResponse {
-//
-//        return chargeTemplateService.getById(id)
-//    }
-//
-//    @GetMapping("/building/{buildingId}")
-//    fun getByBuilding(
-//        @PathVariable buildingId: UUID
-//    ): List<ChargeTemplateResponse> {
-//
-//        return chargeTemplateService.getByBuilding(buildingId)
-//    }
-//
-//    @GetMapping("/tenant/{tenantId}")
-//    fun getByTenant(
-//        @PathVariable tenantId: UUID
-//    ): List<ChargeTemplateResponse> {
-//
-//        return chargeTemplateService.getByTenant(tenantId)
-//    }
-//
-//    @PutMapping("/{id}")
-//    fun update(
-//        @PathVariable id: UUID,
-//        @Valid @RequestBody request: UpdateChargeTemplateRequest
-//    ): ChargeTemplateDetailResponse {
-//
-//        return chargeTemplateService.update(id, request)
-//    }
-//
-//    @PatchMapping("/{id}/deactivate")
-//    fun deactivate(
-//        @PathVariable id: UUID
-//    ) {
-//        return chargeTemplateService.deactivate(id)
-//    }
-//
-//    @PatchMapping("/{id}/activate")
-//    fun activate(
-//        @PathVariable id: UUID
-//    ) {
-//        chargeTemplateService.activate(id)
-//    }
+    @GetMapping("/{id}")
+    fun getById(
+        @PathVariable id: UUID
+    ): ChargeTemplateDetailResponse {
+
+        return chargeTemplateService.getById(id)
+    }
+
+    @GetMapping("/building/{buildingId}")
+    fun getByBuilding(
+        @PathVariable buildingId: UUID
+    ): List<ChargeTemplateResponse> {
+
+        return chargeTemplateService.getByBuilding(buildingId)
+    }
+
+    @GetMapping("/tenant/{tenantId}")
+    fun getByTenant(
+        @PathVariable tenantId: UUID
+    ): List<ChargeTemplateResponse> {
+
+        return chargeTemplateService.getByTenant(tenantId)
+    }
+
+    @PutMapping("/{id}")
+    fun update(
+        @PathVariable id: UUID,
+        @Valid @RequestBody request: UpdateChargeTemplateRequest
+    ): ChargeTemplateDetailResponse {
+
+        return chargeTemplateService.update(id, request)
+    }
+
+    @PatchMapping("/{id}/deactivate")
+    fun deactivate(
+        @PathVariable id: UUID
+    ) {
+        return chargeTemplateService.deactivate(id)
+    }
+
+    @PatchMapping("/{id}/activate")
+    fun activate(
+        @PathVariable id: UUID
+    ) {
+        chargeTemplateService.activate(id)
+    }
 
 
 }

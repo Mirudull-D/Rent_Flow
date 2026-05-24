@@ -5,7 +5,7 @@ import com.kotlin.rent_flow.enums.FrequencyType
 import com.kotlin.rent_flow.enums.ScopeType
 import java.math.BigDecimal
 import java.util.UUID
-import kotlin.time.Instant
+import java.time.Instant
 
 data class CreateChargeTemplateRequest(
     val scope: ScopeType,
@@ -45,5 +45,4 @@ data class UpdateChargeTemplateRequest(
 
     val endDate: Instant?,
 
-    val isActive: Boolean?
 )

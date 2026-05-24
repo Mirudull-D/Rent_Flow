@@ -1,10 +1,13 @@
 package com.kotlin.rent_flow.controllers
 
+import com.kotlin.rent_flow.dtos.response.ChargeDetailResponse
 import com.kotlin.rent_flow.dtos.response.ChargeResponse
 import com.kotlin.rent_flow.services.ChargeServices
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.util.UUID
 
 @RestController
 @RequestMapping("/charge")
@@ -15,21 +18,21 @@ class ChargeController(
     fun getAll(): List<ChargeResponse> {
         return chargeService.getAll()
     }
-//
-//    @GetMapping("/{id}")
-//    fun getById(
-//        @PathVariable id: UUID
-//    ): ChargeDetailResponse {
-//        return chargeService.getById(id)
-//    }
-//
-//    @GetMapping("/tenant/{tenantId}")
-//    fun getByTenant(
-//        @PathVariable tenantId: UUID
-//    ): List<ChargeResponse> {
-//        return chargeService.getByTenant(tenantId)
-//    }
-//
+
+    @GetMapping("/{id}")
+    fun getById(
+        @PathVariable id: UUID
+    ): ChargeDetailResponse {
+        return chargeService.getById(id)
+    }
+
+    @GetMapping("/tenant/{tenantId}")
+    fun getByTenant(
+        @PathVariable tenantId: UUID
+    ): List<ChargeResponse> {
+        return chargeService.getByTenant(tenantId)
+    }
+
 //    @GetMapping("/building/{buildingId}")
 //    fun getByBuilding(
 //        @PathVariable buildingId: UUID

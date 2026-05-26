@@ -34,4 +34,9 @@ interface ChargeRepository : JpaRepository<Charge, UUID> {
 
     fun existsByBuilding_Id(buildingId: UUID): Boolean
     fun findAllByBuilding_Id(buildingId: UUID): List<Charge>
+    fun existsByTemplate_IdAndPeriodMonthAndPeriodYear(
+        templateId: UUID,
+        periodMonth: Int,
+        periodYear: Int
+    ): Boolean
 }

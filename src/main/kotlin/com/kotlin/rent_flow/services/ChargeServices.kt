@@ -13,5 +13,4 @@ interface ChargeServices {
     fun createManualCharge(request: CreateManualChargeRequest): ChargeResponse
     fun markPaid(id: UUID): ChargeDetailResponse
     fun markPending(id: UUID): ChargeDetailResponse
-//    fun generateMonthlyCharges
 }

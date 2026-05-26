@@ -2,9 +2,14 @@ package com.kotlin.rent_flow.controllers
 
 import com.kotlin.rent_flow.dtos.response.ChargeDetailResponse
 import com.kotlin.rent_flow.dtos.response.ChargeResponse
+import com.kotlin.rent_flow.dtos.response.CreateManualChargeRequest
 import com.kotlin.rent_flow.services.ChargeServices
+import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.PostMapping
+import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import java.util.UUID
@@ -33,31 +38,31 @@ class ChargeController(
         return chargeService.getByTenant(tenantId)
     }
 
-//    @GetMapping("/building/{buildingId}")
-//    fun getByBuilding(
-//        @PathVariable buildingId: UUID
-//    ): List<ChargeResponse> {
-//        return chargeService.getByBuilding(buildingId)
-//    }
-//
-//    @PostMapping("/manual")
-//    fun createManualCharge(
-//        @Valid @RequestBody request: CreateManualChargeRequest
-//    ): ChargeResponse {
-//        return chargeService.createManualCharge(request)
-//    }
-//
-//    @PatchMapping("/{id}/mark-paid")
-//    fun markPaid(
-//        @PathVariable id: UUID
-//    ): ChargeDetailResponse {
-//        return chargeService.markPaid(id)
-//    }
-//
-//    @PatchMapping("/{id}/mark-pending")
-//    fun markPending(
-//        @PathVariable id: UUID
-//    ): ChargeDetailResponse {
-//        return chargeService.markPending(id)
-//    }
+    @GetMapping("/building/{buildingId}")
+    fun getByBuilding(
+        @PathVariable buildingId: UUID
+    ): List<ChargeResponse> {
+        return chargeService.getByBuilding(buildingId)
+    }
+
+    @PostMapping("/manual")
+    fun createManualCharge(
+        @Valid @RequestBody request: CreateManualChargeRequest
+    ): ChargeResponse {
+        return chargeService.createManualCharge(request)
+    }
+
+    @PatchMapping("/{id}/mark-paid")
+    fun markPaid(
+        @PathVariable id: UUID
+    ): ChargeDetailResponse {
+        return chargeService.markPaid(id)
+    }
+
+    @PatchMapping("/{id}/mark-pending")
+    fun markPending(
+        @PathVariable id: UUID
+    ): ChargeDetailResponse {
+        return chargeService.markPending(id)
+    }
 }

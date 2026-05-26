@@ -29,5 +29,9 @@ interface ChargeRepository : JpaRepository<Charge, UUID> {
 """)
     fun findAllWithRelations(): List<Charge>
 
+    fun existsByTenant_Id(tenantId: UUID): Boolean
     fun findAllByTenant_Id(tenantId: UUID): List<Charge>
+
+    fun existsByBuilding_Id(buildingId: UUID): Boolean
+    fun findAllByBuilding_Id(buildingId: UUID): List<Charge>
 }

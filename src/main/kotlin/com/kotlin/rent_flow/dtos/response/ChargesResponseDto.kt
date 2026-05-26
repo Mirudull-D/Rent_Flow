@@ -88,3 +88,22 @@ data class ChargeTemplateInfoResponse(
 
     val frequency: FrequencyType
 )
+data class CreateManualChargeRequest(
+
+    val scope: ScopeType,
+
+    val buildingId: UUID?,
+
+    val tenantId: UUID?,
+
+    val chargeType: ChargeType,
+
+    val label: String,
+
+    val amount: BigDecimal,
+
+    val dueDate: LocalDate?,
+
+    val notes: String?,
+
+)

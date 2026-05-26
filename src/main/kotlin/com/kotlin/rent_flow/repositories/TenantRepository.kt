@@ -11,4 +11,5 @@ interface TenantRepository : JpaRepository<Tenant, UUID> {
     fun existsByPropertyUnit_Building_IdAndIsActiveTrue(BuildingId: UUID): Boolean
     fun existsByPropertyUnit_IdAndIsActiveTrue(propertyUnitId: UUID): Boolean
     fun findAllByPropertyUnit_Id(propertyUnitId: UUID): List<Tenant>
+    fun countByIsActiveTrue(): Long
 }

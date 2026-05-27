@@ -498,9 +498,32 @@
     },
     {
       "name": "/buildings/{buildingId}/units",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
       "request": {
         "method": "GET",
-        "header": []
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Sunrise Apartments\",\r\n  \"address\": \"12, MG Road, Chennai\",\r\n  \"waterTaxAmount\": 1500.00,\r\n  \"propertyTaxAmount\": 3000.00\r\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8080/buildings/{{buildingId}}/units",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8080",
+          "path": [
+            "buildings",
+            "{{buildingId}}",
+            "units"
+          ]
+        }
       },
       "response": [
         {
@@ -651,7 +674,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8080/units/c0c0c844-3354-499f-b16b-1d0a4cd0ca3d/tenants",
+          "raw": "http://127.0.0.1:8080/units/7d948311-06d2-4d9f-8b98-cf05787d12f9/tenants",
           "protocol": "http",
           "host": [
             "127",
@@ -662,7 +685,7 @@
           "port": "8080",
           "path": [
             "units",
-            "c0c0c844-3354-499f-b16b-1d0a4cd0ca3d",
+            "7d948311-06d2-4d9f-8b98-cf05787d12f9",
             "tenants"
           ]
         }
@@ -717,6 +740,56 @@
           ],
           "cookie": [],
           "body": "[\n    {\n        \"id\": \"e590f227-3afb-4d80-9dd7-500be3a37ac5\",\n        \"name\": \"Rahul Sharma\",\n        \"phoneNumber\": \"9876543210\",\n        \"doorDescription\": \"2nd Floor Left Side\",\n        \"rent\": 15000,\n        \"active\": true\n    }\n]"
+        },
+        {
+          "name": "/units/{unitId}/tenants",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8080/units/7d948311-06d2-4d9f-8b98-cf05787d12f9/tenants",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8080",
+              "path": [
+                "units",
+                "7d948311-06d2-4d9f-8b98-cf05787d12f9",
+                "tenants"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "166"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:34:25 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"4df4b434-616f-45ad-9644-14bf687bc005\",\n        \"name\": \"Rahul Sharma\",\n        \"phoneNumber\": \"9876543210\",\n        \"doorDescription\": \"2nd Floor Left Side\",\n        \"rent\": 15000,\n        \"active\": true\n    }\n]"
         }
       ]
     },
@@ -826,7 +899,7 @@
           "raw": "{\r\n  \"name\": \"Rahul Sharma\",\r\n  \"phoneNumber\": \"9876543210\",\r\n  \"doorDescription\": \"2nd Floor Left Side\",\r\n  \"rent\": 15000\r\n}"
         },
         "url": {
-          "raw": "http://127.0.0.1:8080/tenants/e590f227-3afb-4d80-9dd7-500be3a37ac5",
+          "raw": "http://127.0.0.1:8080/tenants/4df4b434-616f-45ad-9644-14bf687bc005",
           "protocol": "http",
           "host": [
             "127",
@@ -837,7 +910,7 @@
           "port": "8080",
           "path": [
             "tenants",
-            "e590f227-3afb-4d80-9dd7-500be3a37ac5"
+            "4df4b434-616f-45ad-9644-14bf687bc005"
           ]
         }
       },
@@ -1125,6 +1198,805 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "/charge-templates/{{id}}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge-templates/{{id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates",
+            "{{id}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge-templates/{{id}}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/charge-templates/{{id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge-templates",
+                "{{id}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "394"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:03:32 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"3d610723-e4d2-41da-a670-26ed9b0a1f30\",\n    \"scope\": \"BUILDING\",\n    \"building\": {\n        \"id\": \"75509c81-a5a6-409f-a7ab-11ddfae49ddd\",\n        \"name\": \"Sunrise Apartments\"\n    },\n    \"tenant\": null,\n    \"chargeType\": \"WATER_TAX\",\n    \"label\": \"Monthly Water Charge\",\n    \"defaultAmount\": 2500,\n    \"amountIsFixed\": true,\n    \"frequency\": \"MONTHLY\",\n    \"dueDay\": 5,\n    \"autoGenerate\": true,\n    \"startDate\": \"2026-05-01T00:00:00Z\",\n    \"endDate\": null,\n    \"charges\": [],\n    \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/charge-templates/building/{buildingId}",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scope\": \"BUILDING\",\r\n  \"buildingId\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n  \"chargeType\": \"WATER_TAX\",\r\n  \"label\": \"Monthly Water Charge\",\r\n  \"defaultAmount\": 2500,\r\n  \"amountIsFixed\": true,\r\n  \"frequency\": \"MONTHLY\",\r\n  \"dueDay\": 5,\r\n  \"autoGenerate\": true,\r\n  \"startDate\": \"2026-05-01T00:00:00Z\",\r\n  \"endDate\": null,\r\n  \"isActive\": true\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/charge-templates/building/791bcd9e-e5cc-48fc-8daf-29decdf17927",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates",
+            "building",
+            "791bcd9e-e5cc-48fc-8daf-29decdf17927"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge-templates/building/{buildingId}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"scope\": \"BUILDING\",\r\n  \"buildingId\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n  \"chargeType\": \"WATER_TAX\",\r\n  \"label\": \"Monthly Water Charge\",\r\n  \"defaultAmount\": 2500,\r\n  \"amountIsFixed\": true,\r\n  \"frequency\": \"MONTHLY\",\r\n  \"dueDay\": 5,\r\n  \"autoGenerate\": true,\r\n  \"startDate\": \"2026-05-01T00:00:00Z\",\r\n  \"endDate\": null,\r\n  \"isActive\": true\r\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/charge-templates/building/791bcd9e-e5cc-48fc-8daf-29decdf17927",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge-templates",
+                "building",
+                "791bcd9e-e5cc-48fc-8daf-29decdf17927"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "234"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 15:15:22 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"69b1f5c7-b1bb-40f1-b1a1-466dd6b70af3\",\n        \"scope\": \"BUILDING\",\n        \"chargeType\": \"WATER_TAX\",\n        \"label\": \"Monthly Water Charge\",\n        \"defaultAmount\": 2500,\n        \"amountIsFixed\": true,\n        \"frequency\": \"MONTHLY\",\n        \"dueDay\": 5,\n        \"autoGenerate\": true,\n        \"active\": true\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/charge-templates/tenant/{{tenantId}}",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scope\": \"BUILDING\",\r\n  \"buildingId\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n  \"chargeType\": \"WATER_TAX\",\r\n  \"label\": \"Monthly Water Charge\",\r\n  \"defaultAmount\": 2500,\r\n  \"amountIsFixed\": true,\r\n  \"frequency\": \"MONTHLY\",\r\n  \"dueDay\": 5,\r\n  \"autoGenerate\": true,\r\n  \"startDate\": \"2026-05-01T00:00:00Z\",\r\n  \"endDate\": null,\r\n  \"isActive\": true\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080//charge-templates/tenant/{{tenantId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "",
+            "charge-templates",
+            "tenant",
+            "{{tenantId}}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/charge-templates/{id}",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"defaultAmount\": 3000.00,\r\n  \"label\": \"Updated Maintenance Charge\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/charge-templates/69b1f5c7-b1bb-40f1-b1a1-466dd6b70af3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates",
+            "69b1f5c7-b1bb-40f1-b1a1-466dd6b70af3"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge-templates/{id}",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"defaultAmount\": 3000.00,\r\n  \"label\": \"Updated Maintenance Charge\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/charge-templates/69b1f5c7-b1bb-40f1-b1a1-466dd6b70af3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge-templates",
+                "69b1f5c7-b1bb-40f1-b1a1-466dd6b70af3"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "400"
+            },
+            {
+              "key": "Date",
+              "value": "Sun, 24 May 2026 15:20:55 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"69b1f5c7-b1bb-40f1-b1a1-466dd6b70af3\",\n    \"scope\": \"BUILDING\",\n    \"building\": {\n        \"id\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\n        \"name\": \"Sunrise Apartments\"\n    },\n    \"tenant\": null,\n    \"chargeType\": \"WATER_TAX\",\n    \"label\": \"Updated Maintenance Charge\",\n    \"defaultAmount\": 3000,\n    \"amountIsFixed\": true,\n    \"frequency\": \"MONTHLY\",\n    \"dueDay\": 5,\n    \"autoGenerate\": true,\n    \"startDate\": \"2026-05-01T00:00:00Z\",\n    \"endDate\": null,\n    \"charges\": [],\n    \"active\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/charge-templates/{{id}}/activate",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "",
+            "value": "",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/charge-templates/{{id}}/activate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates",
+            "{{id}}",
+            "activate"
+          ],
+          "query": [
+            {
+              "key": "",
+              "value": null,
+              "type": "text",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/charge-templates/{{id}}/deactivate",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scope\": \"BUILDING\",\r\n  \"buildingId\": \"791bcd9e-e5cc-48fc-8daf-29decdf17927\",\r\n  \"chargeType\": \"WATER_TAX\",\r\n  \"label\": \"Monthly Water Charge\",\r\n  \"defaultAmount\": 2500,\r\n  \"amountIsFixed\": true,\r\n  \"frequency\": \"MONTHLY\",\r\n  \"dueDay\": 5,\r\n  \"autoGenerate\": true,\r\n  \"startDate\": \"2026-05-01T00:00:00Z\",\r\n  \"endDate\": null,\r\n  \"isActive\": true\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/charge-templates/{{id}}/deactivate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge-templates",
+            "{{id}}",
+            "deactivate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/charge",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "/charge/{{id}}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge/{{id}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge",
+            "{{id}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge/{{id}}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/charge/{{id}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge",
+                "{{id}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "550"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:37:41 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0d5411e2-7459-4642-bf5e-1a43e2cc26b8\",\n    \"scope\": \"TENANT\",\n    \"chargeType\": \"RENT\",\n    \"label\": \"Monthly Rent\",\n    \"amount\": 15000,\n    \"status\": \"PENDING\",\n    \"periodLabel\": \"MAY 2026\",\n    \"periodMonth\": 5,\n    \"periodYear\": 2026,\n    \"dueDate\": \"2026-05-05\",\n    \"paidDate\": null,\n    \"notes\": \"Auto-generated charge\",\n    \"receiptS3Key\": null,\n    \"building\": null,\n    \"tenant\": {\n        \"id\": \"4df4b434-616f-45ad-9644-14bf687bc005\",\n        \"name\": \"Rahul Sharma\",\n        \"phoneNumber\": \"9876543210\",\n        \"unitNumber\": \"12345\"\n    },\n    \"template\": {\n        \"id\": \"829adf91-bc25-493e-b913-0ec124caf37d\",\n        \"label\": \"Monthly Rent\",\n        \"frequency\": \"MONTHLY\"\n    },\n    \"overdue\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/charge/{{id}}/mark-paid",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge/{{id}}/mark-paid",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge",
+            "{{id}}",
+            "mark-paid"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge/{{id}}/mark-paid",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/charge/{{id}}/mark-paid",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge",
+                "{{id}}",
+                "mark-paid"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "556"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:39:46 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0d5411e2-7459-4642-bf5e-1a43e2cc26b8\",\n    \"scope\": \"TENANT\",\n    \"chargeType\": \"RENT\",\n    \"label\": \"Monthly Rent\",\n    \"amount\": 15000,\n    \"status\": \"PAID\",\n    \"periodLabel\": \"MAY 2026\",\n    \"periodMonth\": 5,\n    \"periodYear\": 2026,\n    \"dueDate\": \"2026-05-05\",\n    \"paidDate\": \"2026-05-27\",\n    \"notes\": \"Auto-generated charge\",\n    \"receiptS3Key\": null,\n    \"building\": null,\n    \"tenant\": {\n        \"id\": \"4df4b434-616f-45ad-9644-14bf687bc005\",\n        \"name\": \"Rahul Sharma\",\n        \"phoneNumber\": \"9876543210\",\n        \"unitNumber\": \"12345\"\n    },\n    \"template\": {\n        \"id\": \"829adf91-bc25-493e-b913-0ec124caf37d\",\n        \"label\": \"Monthly Rent\",\n        \"frequency\": \"MONTHLY\"\n    },\n    \"overdue\": false\n}"
+        }
+      ]
+    },
+    {
+      "name": "/charge/{{id}}/mark-pending",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge/{{id}}/mark-pending",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge",
+            "{{id}}",
+            "mark-pending"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge/{{id}}/mark-pending",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/charge/{{id}}/mark-pending",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge",
+                "{{id}}",
+                "mark-pending"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "550"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:40:18 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0d5411e2-7459-4642-bf5e-1a43e2cc26b8\",\n    \"scope\": \"TENANT\",\n    \"chargeType\": \"RENT\",\n    \"label\": \"Monthly Rent\",\n    \"amount\": 15000,\n    \"status\": \"PENDING\",\n    \"periodLabel\": \"MAY 2026\",\n    \"periodMonth\": 5,\n    \"periodYear\": 2026,\n    \"dueDate\": \"2026-05-05\",\n    \"paidDate\": null,\n    \"notes\": \"Auto-generated charge\",\n    \"receiptS3Key\": null,\n    \"building\": null,\n    \"tenant\": {\n        \"id\": \"4df4b434-616f-45ad-9644-14bf687bc005\",\n        \"name\": \"Rahul Sharma\",\n        \"phoneNumber\": \"9876543210\",\n        \"unitNumber\": \"12345\"\n    },\n    \"template\": {\n        \"id\": \"829adf91-bc25-493e-b913-0ec124caf37d\",\n        \"label\": \"Monthly Rent\",\n        \"frequency\": \"MONTHLY\"\n    },\n    \"overdue\": true\n}"
+        }
+      ]
+    },
+    {
+      "name": "/charge/building/{buildingId}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge/building/{{buildingId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge",
+            "building",
+            "{{buildingId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge/building/{buildingId}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/charge/building/{{buildingId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge",
+                "building",
+                "{{buildingId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "431"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:32:29 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"fbacb791-b2d8-467b-9e02-fdc030c242f7\",\n        \"chargeType\": \"WATER_TAX\",\n        \"label\": \"Monthly Water Charge\",\n        \"amount\": 2500,\n        \"status\": \"PENDING\",\n        \"dueDate\": \"2026-05-05\",\n        \"tenantName\": null,\n        \"buildingName\": \"Sunrise Apartments\"\n    },\n    {\n        \"id\": \"61657298-9f4a-4b7f-a144-6afdc3571b7c\",\n        \"chargeType\": \"WATER_TAX\",\n        \"label\": \"Monthly Water Charge\",\n        \"amount\": 2500,\n        \"status\": \"PENDING\",\n        \"dueDate\": \"2026-05-05\",\n        \"tenantName\": null,\n        \"buildingName\": \"Sunrise Apartments\"\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/charge/tenant/{{tenantId}}",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/charge/tenant/{{tenantId}}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge",
+            "tenant",
+            "{{tenantId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge/tenant/{{tenantId}}",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/charge/tenant/{{tenantId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge",
+                "tenant",
+                "{{tenantId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "402"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:36:09 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"0d5411e2-7459-4642-bf5e-1a43e2cc26b8\",\n        \"chargeType\": \"RENT\",\n        \"label\": \"Monthly Rent\",\n        \"amount\": 15000,\n        \"status\": \"PENDING\",\n        \"dueDate\": \"2026-05-05\",\n        \"tenantName\": \"Rahul Sharma\",\n        \"buildingName\": null\n    },\n    {\n        \"id\": \"0cbbcd0e-49ab-4b75-a34a-6ee15aedcc1a\",\n        \"chargeType\": \"MISC\",\n        \"label\": \"Broken Window Repair\",\n        \"amount\": 2500,\n        \"status\": \"PENDING\",\n        \"dueDate\": \"2026-06-15\",\n        \"tenantName\": \"Rahul Sharma\",\n        \"buildingName\": null\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "/charge/manual",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"scope\": \"TENANT\",\r\n  \"tenantId\": \"4df4b434-616f-45ad-9644-14bf687bc005\",\r\n  \"chargeType\": \"MISC\",\r\n  \"label\": \"Broken Window Repair\",\r\n  \"amount\": 2500,\r\n  \"dueDate\": \"2026-06-15\",\r\n  \"notes\": \"Repair cost for broken window\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/charge/manual",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "charge",
+            "manual"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "/charge/manual",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"scope\": \"TENANT\",\r\n  \"tenantId\": \"4df4b434-616f-45ad-9644-14bf687bc005\",\r\n  \"chargeType\": \"MISC\",\r\n  \"label\": \"Broken Window Repair\",\r\n  \"amount\": 2500,\r\n  \"dueDate\": \"2026-06-15\",\r\n  \"notes\": \"Repair cost for broken window\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/charge/manual",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "charge",
+                "manual"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Content-Length",
+              "value": "200"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 26 May 2026 19:34:48 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"0cbbcd0e-49ab-4b75-a34a-6ee15aedcc1a\",\n    \"chargeType\": \"MISC\",\n    \"label\": \"Broken Window Repair\",\n    \"amount\": 2500,\n    \"status\": \"PENDING\",\n    \"dueDate\": \"2026-06-15\",\n    \"tenantName\": \"Rahul Sharma\",\n    \"buildingName\": null\n}"
+        }
+      ]
+    },
+    {
+      "name": "/dashboard/summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/dashboard/summary",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "dashboard",
+            "summary"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "buildingId",
+      "value": ""
+    },
+    {
+      "key": "tenantId",
+      "value": ""
     }
   ]
 }
